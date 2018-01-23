@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset>
+		<title>Alert</title>
+	</head>
+	<body>
+		<script>
+			document.addEventListener('keydown', message, false);
+			
+			function message(e) {
+				if(e.code === 'KeyS' && !e.shiftKey && 
+				(navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+					e.preventDefault();
+					alert("Save!");
+				}
+				else if(e.code === 'KeyS' && e.shiftKey &&
+				(navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+					e.preventDefault();
+					alert("Save all!");
+				}
+				else if(e.code === 'KeyA' && 
+				(navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+					e.preventDefault();
+					alert("Select all!");
+				}
+			}
+		</script>
+	</body>
+</html>

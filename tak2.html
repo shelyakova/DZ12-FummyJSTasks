@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset>
+		<title>Task 2</title>
+	</head>
+	<body>
+		<center>
+			
+			<SPAN id="button1" style="position:relative;
+								z-index:10" onmouseOver="moveIt()" 
+								onfocus="moveIt();
+								this.blur()">
+			<button style="height:25px; 
+					width:80px;" 
+					onmouseDown="moveIt()" 
+					onmouseover="moveIt()" 
+					onfocus="moveIt();
+					this.blur()">
+					Catch me!
+			</button> 
+			</SPAN></P> 
+		</center> 
+		<script> 
+			function getObj(objID) { 
+				if (document.getElementById) {
+					return document.getElementById(objID);
+				} 
+			} 
+
+			var ie4=document.all;
+			var ns6=document.getElementById&&!document.all;
+			button=getObj("button1"); 
+
+			function moveIt(){ 
+				y=Math.floor(Math.random()*301); 
+				x=Math.floor(Math.random()*401); 
+				if (ie4){ 
+					button.style.top  = y; 
+					button.style.left = x; 
+				} 
+				else if (ns6){ 
+					button.style.top  = y+"px"; 
+					button.style.left = x+"px"; 
+				} 
+			} 
+		</script>
+	</body>
+</html>

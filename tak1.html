@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset>
+		<title>Окрашивание текста</title>
+		
+	</head>
+	<body>
+		<div class="par">Боже мой</div>
+		
+		<div class="par">Наконец-то вышло</div>
+		
+		<div class="par">Я молодец</div>
+		
+		<script>
+			document.addEventListener('keypress', textColor, false);
+			
+			function textColor(e) {
+				var key = e.key.toLowerCase();
+				var div = document.getElementsByClassName('par');
+				
+				for(var i=0; i < div.length; i++) {
+					switch(key) {
+						case 'r': div[i].style.color = 'red';
+						break;
+					
+						case 'b': div[i].style.color = 'blue';
+						break;
+					
+						case 'g': div[i].style.color = 'green';
+						break;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
